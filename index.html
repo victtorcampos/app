@@ -6,9 +6,12 @@
   <body>
    <h1>Olá</h1>
     <script>
-       var response = async () => await fetch('https://10.10.10.247:3001/hello');
+      const  response = async function() { await fetch('https://10.10.10.247:3001/hello');
       var responseJson =await response.json();
       console.log("Response ",responseJson);
+                                         }
+      
+      start();
     </script>
   </body>
 </html>
