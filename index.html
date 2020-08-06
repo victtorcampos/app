@@ -5,5 +5,19 @@
   </head>
   <body>
    <h1>Olá</h1>
+    <script>
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("GET", "http://10.10.10.247:3000/hello");
+
+    xhr.send();
+    </script>
   </body>
 </html>
