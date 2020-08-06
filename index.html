@@ -6,12 +6,13 @@
   <body>
    <h1>Olá</h1>
     <script>
-      const  response = async function() { await fetch('https://10.10.10.247:3001/hello');
-      var responseJson =await response.json();
-      console.log("Response ",responseJson);
-                                         }
-      
-      start();
+    const start = async function() {
+      const response = await fetch('https://10.10.10.247:3001/hello');
+     var responseJson =await response.json();
+     console.log("Response ",responseJson);
+    }
+
+    start();
     </script>
   </body>
 </html>
