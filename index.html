@@ -6,7 +6,7 @@
   <body>
    <h1>Olá</h1>
     <script>
-      async var response = await fetch('https://10.10.10.247:3001/hello');
+       var response = async () => await fetch('https://10.10.10.247:3001/hello');
       var responseJson =await response.json();
       console.log("Response ",responseJson);
     </script>
