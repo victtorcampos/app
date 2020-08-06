@@ -6,20 +6,15 @@
   <body>
    <h1>Olá</h1>
     <script>
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    xhr.setRequestHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-    xhr.addEventListener("readystatechange", function() {
-      if(this.readyState === 4) {
-        console.log(JSON.parse(this.responseText));
-      }
-    });
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
 
-    xhr.open("GET", "https://10.10.10.247:3001/hello");
-
-    xhr.send();
+    fetch("https://10.10.10.247:3001/hello", requestOptions)
+     .then(response => response.text())
+     .then(result => console.log(result))
+     .catch(error => console.log('error', error));
     </script>
   </body>
 </html>
