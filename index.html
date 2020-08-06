@@ -6,15 +6,9 @@
   <body>
    <h1>Olá</h1>
     <script>
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-
-    fetch("https://10.10.10.247:3001/hello", requestOptions)
-     .then(response => response.text())
-     .then(result => console.log(result))
-     .catch(error => console.log('error', error));
+      var response = await fetch('https://10.10.10.247:3001/hello');
+      var responseJson =await response.json();
+      console.log("Response ",responseJson);
     </script>
   </body>
 </html>
