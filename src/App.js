@@ -1,12 +1,11 @@
 import * as React from "react";
-import { Route, Routes, NavLink, Navigate, useLocation, Link, } from "react-router-dom";
+import { Route, Routes, NavLink, Link, } from "react-router-dom";
 import LoginPage from "./paginas/LoginPage";
 
 function App() {
   return (<>
     <header>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-
         <NavLink className="navbar-brand" to="/app" >NavBar</NavLink>
         <div>
           <ul className="navbar-nav mr-auto">
@@ -24,7 +23,6 @@ function App() {
             </li>
           </ul>
         </div>
-
       </nav>
       <div className="container-fluid">
         <Routes>

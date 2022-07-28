@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import style from './LoginPage.module.css'
 
 const LoginPage = () => {
+    const counter = useSelector((state) => state.dados);
+    console.log(counter);
 
     return (
         <main className={`w-100 m-auto ${style.formLogin}`}>
