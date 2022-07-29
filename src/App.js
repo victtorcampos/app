@@ -9,7 +9,7 @@ import LoginPage from "./paginas/LoginPage";
 function App() {
   const { user } = useSelector((state) => state.dados);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (!user) { dispatch(loadCredential()); }
   }, [dispatch, user]);
@@ -17,7 +17,7 @@ function App() {
   return (<>
     <header>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <NavLink className="navbar-brand" to="/app" >NavBar</NavLink>
+        <NavLink className="navbar-brand" to="/app" >{`{...}`}</NavLink>
         <div>
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
