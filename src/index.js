@@ -7,9 +7,34 @@ import { Provider } from 'react-redux';
 import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import { CREDENTIALS_NAME } from './constants';
+import { ListUsers } from './data/users';
 
-const counterSlice = createSlice({ name: 'dados', initialState: { user: null }, reducers: { setUser: (state, action) => { state.user = action.payload } } });
-export const { setUser } = counterSlice.actions;
+
+const counterSlice = createSlice({
+  name: 'dados', initialState: { user: null, erro: null }, reducers: {
+    login: (state, action) => {
+      const user = ListUsers.find((u) => (u.email === action.payload.email && u.password === action.payload.password))
+      if (user) {
+        sessionStorage.setItem(CREDENTIALS_NAME, JSON.stringify(user));
+        state.user = user;
+        state.erro = null;
+      } else {
+        state.user = user;
+        state.erro = { message: 'Usuario ou senha invalido' };
+      }
+    }, loadCredential: (state) => {
+      const storedCredentials = sessionStorage.getItem(CREDENTIALS_NAME);
+      if (storedCredentials !== null) {
+        state.user = JSON.parse(storedCredentials)
+      }
+    }, logOut: (state) => {
+      sessionStorage.removeItem(CREDENTIALS_NAME);
+      state.user = null;
+    }
+  }
+});
+export const { login, loadCredential, logOut } = counterSlice.actions;
 export const store = configureStore({ reducer: { dados: counterSlice.reducer }, middleware: [logger] })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +47,7 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+
 
 
 function logger({ getState }) {

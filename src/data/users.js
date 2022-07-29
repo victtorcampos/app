@@ -1,4 +1,4 @@
-export const users = [
-    { username: "victor", password: "", email: "victor-campos@outlook.com" }
-    , { username: "bruno", password: "", email: "bruno-campos@outlook.com" }
+export const ListUsers = [
+    { username: "victorcampos", password: "senha1", email: "victor-campos@outlook.com" }
+    , { username: "brunocampos", password: "senha2", email: "bruno-campos@outlook.com" }
 ];
