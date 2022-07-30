@@ -22,11 +22,11 @@ function App() {
         </button>
         <div className={`navbar-collapse collapse  ${toggler ? 'show' : ''}`} id="navbarNavDropdown">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item"><Link className="nav-link" to="/app" >Home</Link></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/app/about">About</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/app/contact">Contact</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to="/app/consultancm">{user ? `Consulta NCM 🔓` : `Consulta NCM 🔒`}</NavLink></li>
-            <li className="nav-item">{user ? <NavLink className="nav-link" to="/app" onClick={() => { dispatch(logOut()) }} >LogOut 🔒</NavLink> : <NavLink className="nav-link" to="/app/login">Login 🔓</NavLink>}</li>
+            <li className="nav-item"><Link className="nav-link" to="/app" onClick={(e) => { setToggler(false) }}>Home</Link></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/app/about" onClick={(e) => { setToggler(false) }}>About</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/app/contact" onClick={(e) => { setToggler(false) }}>Contact</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/app/consultancm" onClick={(e) => { setToggler(false) }}>{user ? `Consulta NCM 🔓` : `Consulta NCM 🔒`}</NavLink></li>
+            <li className="nav-item">{user ? <NavLink className="nav-link" to="/app" onClick={() => { dispatch(logOut()) }} >LogOut 🔒</NavLink> : <NavLink className="nav-link" to="/app/login" onClick={(e) => { setToggler(false) }}>Login 🔓</NavLink>}</li>
           </ul>
         </div>
       </nav>

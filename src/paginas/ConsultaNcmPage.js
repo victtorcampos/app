@@ -5,21 +5,12 @@ import { ListNcm } from '../data/ListNcm';
 const ConsultaNcmPage = () => {
     const [ncms, setNcms] = useState(null)
     useEffect(() => {
-        if (ncms) {
-
-        }
+        if (ncms) { }
     }, [ncms]);
 
     const handleChange = (event) => {
-        if (event.target.value.length >= 4) {
-            const uplistncm = ListNcm.filter(ncm => (ncm.cod.indexOf(event.target.value) > -1));
-            setNcms(uplistncm);
-        }
-
-        if (ncms && event.target.value.length < 4) {
-            setNcms(null);
-        }
-
+        if (event.target.value.length >= 4) { const uplistncm = ListNcm.filter(ncm => (ncm.cod.indexOf(event.target.value) > -1)); setNcms(uplistncm); }
+        if (ncms && event.target.value.length < 4) { setNcms(null); }
     };
 
 
