@@ -18,8 +18,6 @@ const LoginPage = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(DispatchSetLogin(login));
-
-
     }
 
     function handleChange(event) {

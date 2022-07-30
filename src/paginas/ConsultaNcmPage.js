@@ -26,7 +26,7 @@ const ConsultaNcmPage = () => {
     return (
         <div>
             <h2>Csontaul NCM</h2>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input type={'text'} name="codncm" value={undefined} onChange={handleChange} />
             </form>
             <div>
